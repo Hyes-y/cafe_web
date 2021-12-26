@@ -1,0 +1,74 @@
+{% extends 'payment/base.html' %}
+{% load static %}
+{% block title%}
+<title>PayCheck</title>
+{% endblock %}
+{% block scripts %}
+<script>
+    window.onload = function() {
+        const price = document.getElementsByClassName("order_content_price");
+        const cnt = document.getElementsByClassName("order_content_cnt");
+        const total = document.getElementsByClassName("order_content_total");
+        for(let i=0 ; i<price.length; i++) {
+            const val_price = parseInt(price[i].innerText);
+            const val_cnt = parseInt(cnt[i].innerText);
+            const val = val_price * val_cnt;
+            total[i].innerText = val;
+        }
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+    <div id="order">
+        <p class="table_name">주문 내역</p>
+        <p class="company_info">{{ cart.c_code.c_name }}</p>
+        <table id="order_content">
+            <thead>
+                <tr>
+                    <td class="order_content_head">음료명</td>
+                    <td class="order_content_head">옵션</td>
+                    <td class="order_content_head">가격</td>
+                    <td class="order_content_head">수량</td>
+                    <td class="order_content_head">total</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td class="order_content_name">
+                            <p>{{ item.p_code.p_name }}</p>
+                        </td>
+                        <td class="order_content_option">
+                            {% if item.opt == 1 %}
+                                <p>(ice)</p>
+                            {% else %}
+                                <p>(hot)</p>
+                            {% endif %}
+                        </td>
+                        <td class="order_content_price">
+                            <p>{{ item.p_code.price }}</p>
+                        </td>
+                        <td class="order_content_cnt">
+                            <p>{{ item.cnt }}</p>
+                        </td>
+                        <td class="order_content_total"></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="total">주문 금액: </td>
+                    <td class="total">{{ total }}</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div id="buttonform">
+            <form action="/payment/pay/" method="post">
+                {% csrf_token %}
+                <input type="submit" value="결제하기">
+                <input type="button" value="장바구니" onclick="location.href='{% url 'order:cart' %}'">
+            </form>
+        </div>
+    </div>
+{% endblock %}

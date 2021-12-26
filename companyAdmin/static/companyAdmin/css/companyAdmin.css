@@ -1,0 +1,72 @@
+        @font-face {
+            src: url("../fonts/HSBombaram3.0_Regular.ttf");
+            font-family: "bombaram";
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        #logo {
+            margin: 0px;
+            padding: 20px;
+            background-color: #E4B7A0;
+            width: 100%;
+            height: 100px;
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+        }
+
+
+
+        div ul {
+            width: 20%;
+            height: 100%;
+            background-color: #F6EEE0;
+            position: fixed; /* Make it stick, even on scroll */
+            overflow: auto; /* Enable scrolling if the sidenav has too much content */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+
+        li a {
+          display: block;
+          padding: 8px 16px;
+          text-decoration: none;
+          font-family: 'NanumGothic';
+          font-size: 30px;
+          color: #A45C40;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+          background-color: #A45C40;
+          color: white;
+        }
+
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 500px;
+            /* The height is 500 pixels */
+            width: 50%;
+            /* The width is the width of the web page */
+            clear: left;
+            position: relative;
+            left: 25%;
+            top: 50px;
+        }
+
+        .logo-box {
+            position: absolute;
+            top:40px;
+            right: 40px;
+        }
+
+        .sin{
+            width: 120px;
+            height: 70px;
+            background-color: #fff;
+        }

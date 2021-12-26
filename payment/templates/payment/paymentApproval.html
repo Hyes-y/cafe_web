@@ -1,0 +1,35 @@
+{% extends 'payment/base.html' %}
+{% load static %}
+{% block title%}
+<title>ApprovalCheck</title>
+{% endblock %}
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'payment/css/paymentApproval.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="approval_list">
+        <p id="message">결제가 완료되었습니다!</p>
+        <p> 결제 내역 </p>
+        <table id="approval_table">
+            <tr>
+                <td>주문번호: </td>
+                <td>{{ pay_info.id }}</td>
+            </tr>
+            <tr>
+                <td>지점명: </td>
+                <td>{{ pay_info.c_code.c_name }}</td>
+            </tr>
+            <tr>
+                <td>결제 항목: </td>
+                <td>{{ res.item_name }}</td>
+            </tr>
+            <tr>
+                <td>결제 금액: </td>
+                <td> {{ amount }}원</td>
+            </tr>
+        </table>
+
+        <a href="{% url 'payment:complete' %}"> 메인 화면으로 돌아가기 </a>
+    </div>
+{% endblock %}

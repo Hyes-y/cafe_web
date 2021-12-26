@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>상품목록</title>
+    <link rel="stylesheet" href="{% static 'companyAdmin/css/fonts.css' %}" type="text/css">
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+        #logo {
+            margin: 0px;
+            padding: 20px;
+            background-color: #E4B7A0;
+            width: 100%;
+            height: 100px;
+            position: sticky;
+            top: 0px;
+        }
+
+        div ul {
+            width: 20%;
+            height: 100%;
+            background-color: #F6EEE0;
+            position: fixed; /* Make it stick, even on scroll */
+            overflow: auto; /* Enable scrolling if the sidenav has too much content */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li a {
+          display: block;
+          padding: 8px 16px;
+          text-decoration: none;
+          font-family: 'NanumGothic';
+          font-size: 30px;
+          color: #A45C40;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+          background-color: #A45C40;
+          color: white;
+        }
+
+        #map {
+            height: 500px;
+            /* The height is 500 pixels */
+            width: 70%;
+            /* The width is the width of the web page */
+            clear: left;
+            position: relative;
+            left: 25%;
+            top: 50px;
+
+        }
+
+        #plist {
+            table-layout: fixed;
+        }
+
+        #plist thead {
+            display: table;
+            width: 100%;
+            text-align: center;
+            background-color: #E4B7A0;
+        }
+
+        #plist tbody {
+            display: block;
+            width: 100%;
+            height: 500px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        #plist .product_code {
+            width: 15%;
+        }
+
+        #plist .product_name {
+            width: 25%;
+        }
+
+        #plist .product_price {
+            width: 15%;
+        }
+
+        #plist .product_path {
+            width: 25%;
+        }
+
+        #plist .product_desc {
+            width: 20%;
+        }
+
+
+        .image{
+            width: 95%;
+            height: 95%;
+            padding : 5px;
+        }
+
+        .logo-box {
+        position: absolute;
+        top:40px;
+        right: 40px;
+        }
+
+        .sin{
+        width: 120px;
+        height: 70px;
+        background-color: #fff;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <p>상품 조회</p>
+    </div>
+    <div class="logo-box">
+            <img src="../../static/companyAdmin/logo/logo.png" class="sin">
+    </div>
+    <div>
+        <ul>
+            <li><a href="{% url 'companyAdmin:maps' %}">지점 위치</a></li>
+            <li><a href="{% url 'companyAdmin:append' %}">상품 추가</a></li>
+            <li><a href="{% url 'companyAdmin:delete' %}">상품 삭제</a></li>
+            <li><a href="#">상품 조회</a></li>
+            <li><a href="{% url 'companyAdmin:sales_data' %}">판매 현황</a></li>
+            <li><a href="{% url 'companyAdmin:logout' %}">로그아웃</a></li>
+        </ul>
+    </div>
+    <div id="map">
+        <table id="plist">
+            <thead>
+                <tr>
+                     <td class="product_code"><B>상품코드 </B></td>
+                     <td class="product_name"><B>상품이름 </B></td>
+                     <td class="product_price"><B>상품가격 </B></td>
+                     <td class="product_path"><B>상품이미지 </B></td>
+                     <td class="product_desc"><B>상품설명 </B></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td class="product_code" style="border-bottom: 2px solid #F6EEE0;">{{product.p_code}}</td>
+                        <td class="product_name" style="border-bottom: 2px solid #F6EEE0;">{{product.p_name}}</td>
+                        <td class="product_price" style="border-bottom: 2px solid #F6EEE0;">{{product.price}}</td>
+                        {% if product.image_path %}
+                        <td class="product_path" style="height: 10%; border-bottom: 2px solid #F6EEE0;"><img class="image" src="{{product.image_path}}" ></td>
+                        {% else %}
+                        <td class="product_path" style="height: 10%; border-bottom: 2px solid #F6EEE0;"><img class="image" src="{{product.user_image_path.url}}" ></td>
+                        {% endif %}
+                        <td class="product_desc" style="border-bottom: 2px solid #F6EEE0;">{{product.p_desc}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

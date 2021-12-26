@@ -1,0 +1,104 @@
+        @font-face {
+            src: url("../fonts/URW chancery L.ttf");
+            font-family: "urw";
+        }
+
+        @font-face {
+            src: url("../fonts/NanumGothicBold");
+            font-family: "NanumGothicBold";
+        }
+
+        @font-face {
+            src: url("../fonts/NanumGothic");
+            font-family: "NanumGothic";
+        }
+
+        .table_name {
+            font-size: 20px;
+        }
+
+        .company_info {
+            font-size: 15px;
+            text-align: right;
+        }
+
+        #order {
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+            width: 40vw;
+            height: 70vh;
+            margin: auto;
+            background-image: url('../images/logo2.png');
+            background-position: center;
+            background-repeat : no-repeat;
+            background-size : contain;
+            background-color: #F6EEE0;
+            position: relative;
+        }
+
+        #order_content {
+            margin: 0px auto;
+            table-layout: fixed;
+            width: 100%;
+            height: 80%;
+        }
+
+        #order_content thead {
+            display: table;
+            background-color: #E4B7A0;
+            width: 100%;
+            border-bottom: 2px dashed gray;
+        }
+
+        #order_content tbody {
+            display: block;
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 100%;
+            height: 70%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #order_content tfoot {
+            display: table;
+            width: 100%;
+            background-color: #E4B7A0;
+        }
+
+        #order_content tr {
+            display: table;
+            width: 100%;
+        }
+
+        .order_content_name {
+            width: 30%;
+        }
+
+        .order_content_option {
+            width: 10%;
+        }
+
+        .order_content_cnt {
+            width: 10%;
+        }
+
+        .order_content_price {
+            width: 25%;
+        }
+
+        .order_content_total {
+            width: 25%;
+        }
+
+        .total {
+            padding-top: 20px;
+            border-top: 2px dashed gray;
+        }
+
+        #buttonform {
+            left: 50%;
+            transform: translate(-50%, 0%);
+            position: absolute;
+            bottom: 20px;
+        }

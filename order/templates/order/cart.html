@@ -1,0 +1,127 @@
+{% extends 'order/index.html' %}
+{% load static %}
+{% block title%}
+<title>담은 주문 확인하기</title>
+{% endblock %}
+{% block scripts %}
+    <link href="../static/order/css/cart.css" rel="stylesheet" type="text/css">
+    <script src="../static/order/js/cart.js"></script>
+    <style>
+    body{
+        background-color:#C38370;
+    }
+    .message{
+        display: inline-block;
+        padding: 35px 100px 40px 100px;
+        position: absolute;
+        top: 50%;
+        left 50%;
+        transform: translate(150%,-55%);
+        font-family: 'NanumGothicBold';
+        font-size: 15px;
+        border: 5px solid #F6EEE0;
+        border-radius: 10px;
+        background-color:#E4B7A0;
+    }
+
+    .info{
+        font-size:18px;
+        color: #A45C40;
+    }
+    a.btn1, a.btn2, a.btn3, a.btn4{
+        display: inline-block;
+        padding: 1px 4px 1px 4px;
+        text-decoration: none;
+        line-height: 200%;
+        border: 1px solid #C38370;
+        border-radius: 5px;
+        font-size:13px;
+        color: #F6EEE0;
+        background-color: #C38370;
+    }
+    a.btn1:hover{
+        box-shadow: 2px 2px 2px #F6EEE0;
+        }
+    a.btn2:hover{
+        box-shadow: 2px 2px 2px #F6EEE0;
+        }
+    a.btn3:hover{
+        box-shadow: 2px 2px 2px #F6EEE0;
+        }
+
+    .container {
+        margin: 250px auto;
+        width: 500px;
+        padding: 35px 50px 40px 50px;
+        font-family: 'NanumGothicBold';
+        font-size: 15px;
+        border: 5px solid #F6EEE0;
+        border-radius: 10px;
+        background-color:#E4B7A0;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+    {% if message is not None %}
+    <div class="message">
+        <h2>담은 주문이 없습니다.</h2>
+        <a href="{% url 'order:index' %}" class="btn4">돌아가기</a>
+    </div>
+    {% else %}
+<div class="container">
+    <div class="info">
+        <p>{{ cart.m_id.m_name }}님의 주문 내역</p>
+        <p>{{ message }}</p>
+        <p>{{ cart.c_code.c_name }}</p>
+    </div>
+    <br>
+    <div class="opt">
+        {% if not products %}
+            <h2>담은 주문이 없습니다.&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;</h2>
+
+        {% else %}
+            <table>
+                {% for product in products %}
+                    <tr>
+                        <td>
+                            <p>{{ product.p_code.p_name }}</p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>
+                            {% if product.opt == 1 %}
+                                <p>ice</p>
+                            {% else %}
+                                <p>hot</p>
+                            {% endif %}
+                        </td>
+                        <td>
+        <!--                수정한 부분-->
+                            <p>{{ product.cnt }}잔</p>
+                        </td>
+        <!--                수정한 부분-->
+                        <td>
+                            <form action="/order/{{ product.id }}/cart_remove/" method="POST">
+                                {% csrf_token %}
+                                &nbsp;<button type="submit" name="cart-remove" value="cart">주문 삭제</button>
+                                &nbsp;<button type="submit" name="cart-remove" value="cart_all">주문 항목 전부 삭제</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+    {% endif %}
+    </div>
+    <br><br>
+    <div class="button">
+        <a href="{% url 'order:remove' %}" class="btn1"> 장바구니 전체 삭제 </a><br><br>
+        <a href="{% url 'order:product' %}" class="btn2">계속 주문하기</a>
+        &nbsp;<a href="{% url 'payment:index' %}" class="btn3">결제하기</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

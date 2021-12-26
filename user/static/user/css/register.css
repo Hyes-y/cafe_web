@@ -1,0 +1,60 @@
+        body{
+            background: #f4f4f4;
+        }
+
+        div{
+            background-color: rgba(255,255,255,0.5);
+            margin: 3%;
+            padding: 3%;
+        }
+
+        @font-face {
+            src: url("../fonts/NanumGothic.ttf");
+            font-family: "NanumGothic";
+        }
+
+        table{
+            background: white;
+            margin: auto;
+            padding: 5%;
+            color: gray;
+            font-weight: bold;
+            font-family: "NanumGothic";
+        }
+
+        .title{
+            font-size: 20px;
+            color: #C38370;
+            font-family: "NanumGothic";
+        }
+
+        input[type=text], input[type=password], select {
+            width: 100px;
+            padding: 8px 5px;
+            margin: 5px 1px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: gray;
+            font-family: "NanumGothic";
+        }
+
+        input[name=name], input[name=id], input[name=pwd1], input[name=pwd2]{
+            width:180px;
+            font-family: "NanumGothic";
+        }
+
+        input[type=submit], input[type=button], button[type=button] {
+            width: auto;
+            padding: 5px 5px;
+            margin: 8px 0;
+            color: gray;
+            font-family: "NanumGothic";
+
+        }
+
+
+        #submit{
+            text-align : center;
+        }
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}" type="text/css">
+
+    <script>
+        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+</head>
+<body>
+    <span onclick="openNav()"><image id="menutab" src="../../static/main/images/menu.png"></image></span>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        {% if name is not None %}
+          <a href="{% url 'order:index' %}">ORDER</a>
+          <a href="{% url 'order:cart' %}">CART</a>
+          <a href="{% url 'payment:history' %}">PAYMENT HISTORY</a>
+          <a href="{% url 'user:logout' %}">LOGOUT</a>
+        {% else %}
+          <a href="{% url 'user:login' %}">LOGIN</a>
+          <a href="{% url 'companyAdmin:new' %}">ADMIN</a>
+        {% endif %}
+    </div>
+
+    <div id="myDIV">
+        <div id="content">
+            <div id="logo">
+                <p>BELLEZZA</p>
+            </div>
+            <div id="login">
+                {% if name is not None %}
+                    <p>{{ name }}님 환영합니다.</p>
+                    <a href="{% url 'user:logout' %}">LogOut</a>
+                    <a href="{% url 'order:index' %}">Order</a>
+                {% else %}
+                    <a href="{% url 'user:login' %}">LogIn</a>
+                    <a href="{% url 'companyAdmin:new' %}">Admin</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

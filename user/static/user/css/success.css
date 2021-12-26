@@ -1,0 +1,27 @@
+    body{
+
+    }
+
+    @font-face {
+        src: url("../fonts/NanumGothic.ttf");
+        font-family: "NanumGothic";
+    }
+
+    table{
+        background: white;
+        margin: 120px auto;
+        padding: 10%;
+        font-size:15px;
+        color: #C38370;
+        font-weight: bold;
+        font-family: "NanumGothic";
+    }
+
+    input[type=button]{
+        width: auto;
+        padding: 5px 5px;
+        margin: 8px 0;
+        color: gray;
+        font-family: "NanumGothic";
+    }
+

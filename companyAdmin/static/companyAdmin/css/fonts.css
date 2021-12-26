@@ -1,0 +1,43 @@
+@font-face {
+    src: url("../fonts/HSBombaram3.0_Regular.ttf");
+    font-family: "bombaram";
+}
+
+
+@font-face {
+    src: url("../fonts/Dongle-Bold.ttf");
+    font-family: "dongle-bold";
+}
+
+@font-face {
+    src: url("../fonts/NotoSansKR-Bold.otf");
+    font-family: "NotoSans";
+}
+
+@font-face {
+    src: url("../fonts/NanumGothic.ttf");
+    font-family: "NanumGothic";
+}
+
+@font-face {
+    src: url("../fonts/NanumGothicBold.ttf");
+    font-family: "NanumGothicBold";
+}
+
+@font-face {
+    src: url("../fonts/NanumGothicExtraBold.ttf");
+    font-family: "NanumGothicExtraBold";
+}
+
+@font-face {
+    src: url("../fonts/NanumGothicLight.ttf");
+    font-family: "NanumGothicLight";
+}
+
+
+#logo p {
+    font-family: 'bombaram';
+    font-size: 50px;
+    color: #F6EEE0;
+}
+

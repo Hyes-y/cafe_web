@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko-kr">
+    <head>
+        <meta charset="UTF-8">
+        <title>지점선택</title>
+        <link rel="stylesheet" href="{% static 'order/css/shopsel.css' %}" type="text/css">
+    </head>
+    <body>
+        <section>
+        <div class="bg">
+            <a href="{% url 'order:cart' %}" class="btn3"> 장바구니 </a>
+            <div class="logo-title">
+                <span class="logo">BELLEZZA</span>
+                <span class="title">지점 선택</span>
+            </div>
+            <div class="button-content">
+                <a href="/order/shopsel/1234" class='btn1'>BELLEZZA 명동점</a>
+                <a href="/order/shopsel/5678" class="btn2">BELLEZZA 여의도점</a><br>
+            <p style="color: red;">{{ message }}</p>
+            </div>
+        </div>
+
+        </section>
+    </body>
+</html>

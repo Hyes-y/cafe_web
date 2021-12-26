@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>success</title>
+    <link rel="stylesheet" href="{% static 'user/css/login_success.css' %}" type="text/css">
+</head>
+<body>
+<form>
+    {% csrf_token %}
+    <table>
+        <tr>
+            <image class="logo" src="../../static/user/image/login_logo.png" width="50%"></image>
+            <td>로그인이 완료되었습니다</td>
+        </tr>
+        <tr>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><a href="/order">주문하러가기</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

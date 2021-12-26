@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+	<meta charset="UTF-8">
+	<title>메뉴</title>
+	<link href="../static/main/css/product.css" rel="stylesheet" type="text/css">
+	<script src="../static/main/js/product.js"></script>
+</head>
+<body>
+<form method="post">
+<div align="center">
+	<h3>메뉴 리스트</h3>
+	<table border="1">
+		<tr>
+			<td>
+				<input type="button" value="장바구니 보기" onclick="cartView()" />
+			</td>
+			<td>
+				<input type="button" value="장바구니 담기" onclick="cartin()" />
+			</td>
+
+		</tr>
+	</table>
+	<table class="menulist">
+			<tr>
+					<td align="center">
+						<a href="{% url 'option'%}" onfocus="blur()" onclick="javascript:onView('5265_A201030012'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202108050737133710.png" width="140" alt="천도복숭아 요거트라떼"><br>
+						<span class="named">천도복숭아 요거트라떼</span><br>
+						</a>
+						<span class="cost"> 5,800 원</span>
+					</td>
+								<td align="center">
+						<a href="{% url 'option'%}" onfocus="blur()" onclick="javascript:onView('5266_A203040038'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202108050737395040.png" width="140" alt="천도복숭아 스무디">
+							<br>
+						<span class="named">천도복숭아 스무디</span><br>
+						</a>
+						<span class="cost"> 6,300 원</span>
+					</td>
+								<td align="center">
+						<a href="{% url 'option'%}" onfocus="blur()" onclick="javascript:onView('4885_A203040034'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202105250153497040.png" width="140" alt="멜론 스무디">
+							<br>
+						<span class="named">멜론 스무디</span><br>
+						</a>
+						<span class="cost"> 6,300 원</span>
+					</td>
+								<td align="center">
+						<a href="{% url 'option'%}" onfocus="blur()" onclick="javascript:onView('4886_A203040035'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202105250154196500.png" width="140" alt="수박 스무디">
+							<br>
+						<span class="named">수박 스무디</span><br>
+						</a>
+						<span class="cost"> 6,300 원</span>
+					</td>
+								<td align="center">
+						<a href="{% url 'option'%}" onfocus="blur()" onclick="javascript:onView('4725_A101020252'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202104021021188000.png" width="140" alt="디카페인 아메리카노">
+							<br>
+						<span class="named">디카페인 아메리카노</span><br>
+						</a>
+						<span class="cost"> 4,500 원</span>
+					</td>
+			</tr>
+			<tr>
+								<td align="center">
+						<a href="{% url 'option'%}" onfocus="blur()" onclick="javascript:onView('4726_A102010329'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202104021021082190.png" width="140" alt="디카페인 카페라떼">
+							<br>
+						<span class="named">디카페인 카페라떼</span><br>
+						</a>
+						<span class="cost"> 5,000 원</span>
+					</td>
+								<td align="center">
+						<a href="{% url 'option'%}" onfocus="blur()" onclick="javascript:onView('4727_A204010041'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202103300413081010.png" width="140" alt="오렌지 당근 착즙 주스">
+							<br>
+						<span class="named">오렌지 당근 착즙 주스</span><br>
+						</a>
+						<span class="cost"> 5,500 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('4728_A204010040'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202103300412376730.png" width="140" alt="사과 비트 착즙 주스">
+						<br><span class="named">사과 비트 착즙 주스</span><br>
+						</a>
+						<span class="cost"> 5,500 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('4729_A203040033'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202103300412035600.png" width="140" alt="애플망고 스무디">
+						<br><span class="named">애플망고 스무디</span><br>
+						</a>
+						<span class="cost"> 6,000 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('4731_A203010018'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202103300409470840.png" width="140" alt="피치 딸기 크러쉬">
+						<br><span class="named">피치 딸기 크러쉬</span><br>
+						</a>
+						<span class="cost"> 5,900 원</span>
+					</td>
+			</tr>
+			<tr>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('4733_A203040032'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202103300259263150.png" width="140" alt="딸기 스무디">
+						<br><span class="named">딸기 스무디</span><br>
+						</a>
+						<span class="cost"> 6,000 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('88_A203030009'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202103300306264160.png" width="140" alt="딸기 치즈케익 할리치노">
+						<br><span class="named">딸기 치즈케익 할리치노</span><br>
+						</a>
+						<span class="cost"> 5,900 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('4291_A201010137'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202010270412085280.png" width="140" alt="우리 고구마 라떼">
+						<br><span class="named">우리 고구마 라떼</span><br>
+						</a>
+						<span class="cost"> 5,500 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('75_A101020003'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201704140301301380.png" width="140" alt="카페아메리카노">
+						<br><span class="named">카페아메리카노</span><br>
+						</a>
+						<span class="cost"> 4,100 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('72_A102010013'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201704140304239130.png" width="140" alt="바닐라 딜라이트">
+						<br><span class="named">바닐라 딜라이트</span><br>
+						</a>
+						<span class="cost"> 5,400 원</span>
+					</td>
+			</tr>
+			<tr>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('3532_A104040005'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202005151113177160.png" width="140" alt="콜드브루 딜라이트">
+						<br><span class="named">콜드브루 딜라이트</span><br>
+						</a>
+						<span class="cost"> 5,800 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('84_A104010002'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201606071135389830.png" width="140" alt="콜드브루 R">
+						<br><span class="named">콜드브루 R</span><br>
+						</a>
+						<span class="cost"> 4,500 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('85_A104020001'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201606071143265470.jpg" width="140" alt="콜드브루라떼 R">
+						<br><span class="named">콜드브루라떼 R</span><br>
+						</a>
+						<span class="cost"> 5,000 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('69_A102010008'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201704140303018100.png" width="140" alt="카페라떼 R">
+						<br><span class="named">카페라떼 R</span><br>
+						</a>
+						<span class="cost"> 4,600 원</span>
+					</td>
+								<td align="center">
+						<a href="/payment/" onfocus="blur()" onclick="javascript:onView('1631_A205050006'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201903150909522630.png" width="140" alt="유자 캐모마일 R">
+						<br><span class="named">유자 캐모마일 R</span><br>
+						</a>
+						<span class="cost"> 5,500 원</span>
+					</td>
+			</tr>
+			<tr>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('1629_A205050018'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201903150909095690.png" width="140" alt="복숭아 얼그레이 R">
+						<br><span class="named">복숭아 얼그레이 R</span><br>
+						</a>
+						<span class="cost"> 5,500 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('82_A102010004'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201506190247481260.jpg" width="140" alt="카라멜마끼아또 R">
+						<br><span class="named">카라멜마끼아또 R</span><br>
+						</a>
+						<span class="cost"> 5,500 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('83_A102030003'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_202105240400121010.png" width="140" alt="카페모카 R">
+						<br><span class="named">카페모카 R</span><br>
+						</a>
+						<span class="cost"> 5,100 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('70_A201010006'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201704140307228930.png" width="140" alt="그린티라떼 R">
+						<br><span class="named">그린티라떼 R</span><br>
+						</a>
+						<span class="cost"> 5,800 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('71_A201010011'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/img_Small94.jpg" width="140" alt="밀크티라떼R">
+						<br><span class="named">밀크티라떼R</span><br>
+						</a>
+						<br><span class="cost"> 5,800 원</span><br>
+					</td>
+			</tr>
+			<tr>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('87_A201020003'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201506190258050650.jpg" width="140" alt="화이트초코R">
+						<br><span class="named">화이트초코R</span><br>
+						</a>
+						<span class="cost"> 5,200 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('209_A203030007'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201506190300518200.jpg" width="140" alt="그린티할리치노R">
+						<br><span class="named">그린티할리치노R</span><br>
+						</a>
+						<span class="cost"> 5,900 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('73_A203030011'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201506190301206900.jpg" width="140" alt="밀크티할리치노R">
+						<br><span class="named">밀크티할리치노R</span><br>
+						</a>
+						<span class="cost"> 5,900 원</span>
+					</td>
+								<td align="center">
+						<a href="#" onfocus="blur()" onclick="javascript:onView('66_A205030007'); return false;">
+						<img src="//admin.hollys.co.kr/upload/mall/mallProdut_201806140541105140.jpg" width="140" alt="제주한라봉감귤차R">
+						<br><span class="named">제주한라봉감귤차R</span><br>
+						</a>
+						<span class="cost"> 4,800 원</span>
+					</td>
+			</tr>
+	</table>
+</div>
+</form>
+</body>
+</html>

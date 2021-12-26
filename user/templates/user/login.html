@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'user/css/login.css' %}" type="text/css">
+    <style>
+        body{
+            background-image: url('../static/user/image/login_image.jpg');
+            background-size: 100%;
+        }
+    </style>
+</head>
+<body>
+<form action="/user/login_check/" method="post">
+    {% csrf_token %}
+    <div>
+        <table>
+            <tr>
+                <td class="Title">Member Login</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="user_id" placeholder="아이디를 입력해주세요"></td>
+                <td rowspan="2"><input type="submit" value="로그인" id="btn1"></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="pwd" placeholder="비밀번호를 입력해주세요"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="btn2" value="회원가입" onclick="location.href='register/'">  |
+                <input type="button" name="btn3" value="아이디 찾기" onclick="location.href='findID/'">  |
+                <input type="button" name="btn4" value="비밀번호 찾기" onclick="location.href='findPW/'"></td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>상품추가</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'companyAdmin/css/fonts.css' %}" type="text/css">
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+        #logo {
+            margin: 0px;
+            padding: 20px;
+            background-color: #E4B7A0;
+            width: 100%;
+            height: 100px;
+            position: sticky;
+            top: 0px;
+        }
+
+        div ul {
+            width: 25%;
+            height: 100%;
+            background-color: #F6EEE0;
+            position: fixed; /* Make it stick, even on scroll */
+            overflow: auto; /* Enable scrolling if the sidenav has too much content */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li a {
+          display: block;
+          padding: 8px 16px;
+          text-decoration: none;
+          font-family: 'NanumGothic';
+          font-size: 30px;
+          color: #A45C40;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+          background-color: #A45C40;
+          color: white;
+        }
+
+        .my_table {
+            width:560px;
+            height:300px;
+            padding: 10px;
+            border: 1px solid #C38370;
+            box-shadow: 5px 5px 5px 5px #C38370;
+            border-radius: 5px;
+            clear: left;
+            position: relative;
+            left: 30%;
+            top: 50px;
+        }
+        .logo-box {
+        position: absolute;
+        top:40px;
+        right: 40px;
+        }
+
+        .sin{
+        width: 120px;
+        height: 70px;
+        background-color: #fff;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <p>상품 추가</p>
+    </div>
+    <div class="logo-box">
+            <img src="../../static/companyAdmin/logo/logo.png" class="sin">
+    </div>
+    <div>
+        <ul>
+            <li><a href="{% url 'companyAdmin:maps' %}">지점 위치</a></li>
+            <li><a href="#">상품 추가</a></li>
+            <li><a href="{% url 'companyAdmin:delete' %}">상품 삭제</a></li>
+            <li><a href="{% url 'companyAdmin:plist' %}">상품 조회</a></li>
+            <li><a href="{% url 'companyAdmin:sales_data' %}">판매 현황</a></li>
+            <li><a href="{% url 'companyAdmin:logout' %}">로그아웃</a></li>
+        </ul>
+    </div>
+    <div class="my_table">
+        <form action="{% url 'companyAdmin:append_complete' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table >
+            <tr><td>상품코드</td><td><input type="text" name="p_code" ></td></tr>
+            <tr><td>상품이름</td><td><input type="text" name="p_name" ></td></tr>
+            <tr><td>상품가격</td><td><input type="text" name="price" ></td></tr>
+            <tr><td>상품 이미지</td><td><input type="file" name="image_path" accept="image/*"></td></tr>
+            <tr><td>상품 설명</td><td><input type="text" name="p_desc" ></td></tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="상품추가" id="btn">
+                </td>
+            </tr>
+            <tr >
+                <td colspan="4" id="message">{{message}}</td>
+            </tr>
+
+
+        </table>
+    </form>
+    </div>
+</body>
+</html>

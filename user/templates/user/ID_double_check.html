@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/user/id_overlap_check/" method="post">
+    {% csrf_token %}
+    {{message}}
+
+</form>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="kr">
+
+<head>
+    <title>지점 위치표시</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'companyAdmin/css/fonts.css' %}" type="text/css">
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+        #logo {
+            margin: 0px;
+            padding: 20px;
+            background-color: #E4B7A0;
+            width: 100%;
+            height: 100px;
+            position: sticky;
+            top: 0px;
+        }
+
+        div ul {
+            width: 20%;
+            height: 100%;
+            background-color: #F6EEE0;
+            position: fixed; /* Make it stick, even on scroll */
+            overflow: auto; /* Enable scrolling if the sidenav has too much content */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li a {
+          display: block;
+          padding: 8px 16px;
+          text-decoration: none;
+          font-family: 'NanumGothic';
+          font-size: 30px;
+          color: #A45C40;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+          background-color: #A45C40;
+          color: white;
+        }
+
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 500px;
+            /* The height is 500 pixels */
+            width: 50%;
+            /* The width is the width of the web page */
+            clear: left;
+            position: relative;
+            left: 25%;
+            top: 50px;
+        }
+
+        .logo-box {
+        position: absolute;
+        top:40px;
+        right: 40px;
+        }
+
+        .sin{
+        width: 120px;
+        height: 70px;
+        background-color: #fff;
+        }
+
+    </style>
+    <script>
+        function initMap() {
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: { lat: 37.54795941791992, lng: 126.94989310673955 },
+            });
+
+            for (var i = 0; i < locations.length; i++) {
+                var marker = new google.maps.Marker({
+                    map: map,
+                    label: locations[i].place,
+                    position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+                });
+            }
+        }
+        const locations = [
+            { place:"명동점", lat: 37.565801825509574, lng: 126.98031338133862 },
+            { place:"여의도점", lat: 37.52322772213631, lng: 126.92608040878123 },
+        ];
+    </script>
+</head>
+
+<body>
+    <div id="logo">
+        <p>지점 위치</p>
+    </div>
+    <div class="logo-box">
+            <img src="../../static/companyAdmin/logo/logo.png" class="sin">
+    </div>
+    <div>
+        <ul>
+            <li><a href="#">지점 위치</a></li>
+            <li><a href="{% url 'companyAdmin:append' %}">상품 추가</a></li>
+            <li><a href="{% url 'companyAdmin:delete' %}">상품 삭제</a></li>
+            <li><a href="{% url 'companyAdmin:plist' %}">상품 조회</a></li>
+            <li><a href="{% url 'companyAdmin:sales_data' %}">판매 현황</a></li>
+            <li><a href="{% url 'companyAdmin:logout' %}">로그아웃</a></li>
+        </ul>
+    </div>
+
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW-wWS_tb5UYX6QzHIJwHyE218aKMRufY&callback=initMap&libraries=&v=weekly"
+        async></script>
+</body>
+</html>

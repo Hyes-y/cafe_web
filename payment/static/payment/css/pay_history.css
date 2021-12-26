@@ -1,0 +1,71 @@
+        @font-face {
+            src: url("../fonts/URW chancery L.ttf");
+            font-family: "urw";
+        }
+
+        @font-face {
+            src: url("../fonts/NanumGothicBold");
+            font-family: "NanumGothicBold";
+        }
+
+        @font-face {
+            src: url("../fonts/NanumGothic");
+            font-family: "NanumGothic";
+        }
+
+
+        #payment_history {
+            padding-left: 20px;
+            font-size: 30px;
+            color: #A45C40;
+            margin: 0px auto;
+        }
+
+        .accordion {
+          background-color: #E4B7A0;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+          background-color: #C38370;
+          color: #F6EEE0;
+        }
+
+        .panel {
+          padding: 0 18px;
+          display: none;
+          background-color: #F6EEE0;
+          overflow: hidden;
+        }
+
+        #history_content {
+            width: 50%;
+            height: 70%;
+            background-color: #F6EEE0;
+            overflow: auto;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        #search_form {
+            display: inline-block;
+            padding: 10px;
+            height: 10%;
+            background-color: #F6EEE0;
+            vertical-align: middle;
+        }
+
+        #period {
+            font-weight: bold;
+            padding-left: 15px;
+        }

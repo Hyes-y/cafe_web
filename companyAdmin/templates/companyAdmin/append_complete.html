@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'companyAdmin/css/fonts.css' %}" type="text/css">
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+        #logo {
+            margin: 0px;
+            padding: 20px;
+            background-color: #E4B7A0;
+            width: 100%;
+            height: 100px;
+            position: sticky;
+            top: 0px;
+            text-align: center;
+        }
+
+        #base {
+            background-color: #F6EEE0;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 800px;
+            position: fixed;
+            top: 140px;
+            text-align: center;
+        }
+
+        #mytable {
+
+             margin-left:auto;
+             margin-right:auto;
+             margin-top:200px;
+             margin-bottom:auto;
+        }
+
+         button,
+        button::after {
+          -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+          -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        button {
+          background: none;
+          border: 3px solid #A45C40;
+          border-radius: 5px;
+          color: #A45C40;
+          display: block;
+          font-size: 1.6em;
+          font-weight: bold;
+          margin: 1em auto;
+          padding: 2em 6em;
+          position: relative;
+          text-transform: uppercase;
+        }
+
+        button::before,
+        button::after {
+          background: #fff;
+          content: '';
+          position: absolute;
+          z-index: -1;
+        }
+
+        button:hover {
+          color: #2ecc71;
+        }
+
+        .btn-1::after {
+          height: 0;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+
+        .btn-1:hover:after {
+          height: 100%;
+        }
+
+        /* BUTTON 2 */
+        .btn-2::after {
+          height: 100%;
+          left: 0;
+          top: 0;
+          width: 0;
+        }
+
+        .btn-2:hover:after {
+          width: 100%;
+        }
+
+        .logo-box {
+        position: absolute;
+        top:40px;
+        right: 40px;
+        }
+
+        .sin{
+        width: 120px;
+        height: 70px;
+        background-color: #fff;
+        }
+
+
+    </style>
+    <title>상품등록 완료</title>
+
+</head>
+<body>
+    <div id="logo">
+            <p>상품등록 완료</p>
+    </div>
+    <div class="logo-box">
+            <img src="../../static/companyAdmin/logo/logo.png" class="sin">
+    </div>
+    <div id="base">
+        <tr>
+            <td colspan="2">
+                <button type="btn-1"  onclick="location.href='/companyAdmin/visual'">관리자페이지로 돌아가기</button>
+            </td>
+            <td colspan="2">
+                <button type="btn-2" onclick="location.href='/companyAdmin/plist'">상품목록 확인하기</button>
+            </td>
+        </tr>
+    </div>
+</body>
+</html>

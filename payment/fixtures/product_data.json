@@ -1,0 +1,292 @@
+[
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2000",
+      "p_name": "카페아메리카노",
+      "price": 4100,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201704140301301380.png",
+      "p_desc": "풍미가 가득한 고소함"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2001",
+      "p_name": "디카페인 아메리카노",
+      "price": 4500,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202104021021188000.png",
+      "p_desc": "풍미는 그대로, 디카페인 아메리카노"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2002",
+      "p_name": "카페라떼",
+      "price": 4600,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201704140303018100.png",
+      "p_desc": "69_A102010008"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2003",
+      "p_name": "디카페인 카페라떼",
+      "price": 5000,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202104021021082190.png",
+      "p_desc": "풍미는 그대로, 고소함과 함께"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2004",
+      "p_name": "바닐라딜라이트",
+      "price": 5400,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201704140304239130.png",
+      "p_desc": "가볍지만 맛은 그대로"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2005",
+      "p_name": "콜드브루 딜라이트",
+      "price": 5800,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202005151113177160.png",
+      "p_desc": "가볍지만 풍미는 더욱 무겁게"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2006",
+      "p_name": "콜드브루 R",
+      "price": 4500,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201606071135389830.png",
+      "p_desc": "풍미는 더욱 무겁게"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2007",
+      "p_name": "콜드브루 라떼 R",
+      "price": 5000,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201606071143265470.jpg",
+      "p_desc": "풍미는 더욱 무겁게 맛은 고소하게"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2008",
+      "p_name": "카라멜마끼아또 R",
+      "price": 5500,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201506190247481260.jpg",
+      "p_desc": "에스프레소를 담은 달콤한 카라멜"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2009",
+      "p_name": "카페모카 R",
+      "price": 5100,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202105240400121010.png",
+      "p_desc": "달콤하고 고소한 맛의 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2010",
+      "p_name": "그린티라떼 R",
+      "price": 5800,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201704140307228930.png",
+      "p_desc": "달콤하고 고소한 맛의 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2011",
+      "p_name": "밀크티라떼 R",
+      "price": 5800,
+      "image_path": "//admin.hollys.co.kr/upload/mall/img_Small94.jpg",
+      "p_desc": "달콤하고 고소한 맛의 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2012",
+      "p_name": "우리 고구마 라떼",
+      "price": 5500,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202010270412085280.png",
+      "p_desc": "고구마의 화려한 변신"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2013",
+      "p_name": "화이트초코 R",
+      "price": 5200,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201506190258050650.jpg",
+      "p_desc": "달콤한 화이트초코와의 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2014",
+      "p_name": "그린티할리치노 R",
+      "price": 5800,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201506190300518200.jpg",
+      "p_desc": "달콤하고 고소한 맛의 시원한 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2015",
+      "p_name": "밀크티할리치노 R",
+      "price": 5900,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201506190301206900.jpg",
+      "p_desc": "달콤하고 고소한 맛의 시원한 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2016",
+      "p_name": "제주한라봉감귤차",
+      "price": 4800,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201806140541105140.jpg",
+      "p_desc": "66_A205030007"
+    }
+  },
+   {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2017",
+      "p_name": "유자 캐모마일 R",
+      "price": 5500,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201704140303018100.png",
+      "p_desc": "유자와 캐모마일의 상큼한 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2018",
+      "p_name": "복숭아 얼그레이 R",
+      "price": 5500,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_201903150909522630.png",
+      "p_desc": "복숭아와 얼그레이의 상큼한 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields":{
+      "p_code": "2019",
+      "p_name": "천도복숭아 요거트라떼",
+      "price": 5800,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202108050737133710.png",
+      "p_desc": "달콤한 요거트와 상큼한 복숭아의 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2020",
+      "p_name": "천도복숭아 스무디",
+      "price": 6300,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202108050737395040.png",
+      "p_desc": "달콤한 스무디와 상큼한 복숭아의 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2021",
+      "p_name": "멜론 스무디",
+      "price": 6300,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202105250153497040.png",
+      "p_desc": "달콤한 스무디와 상큼한 멜론의 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2022",
+      "p_name": "수박 스무디",
+      "price": 6300,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202105250154196500.png",
+      "p_desc": "달콤한 스무디와 상큼한 멜론의 만남"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2023",
+      "p_name": "애플망고 스무디",
+      "price": 6000,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202103300412035600.png",
+      "p_desc": "새콤달콤한 망고의 시원한 변신"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2024",
+      "p_name": "딸기 스무디",
+      "price": 6000,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202103300259263150.png",
+      "p_desc": "새콤달콤한 딸기의 시원한 변신"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2025",
+      "p_name": "오렌지 당근 착즙 주스",
+      "price": 5500,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202103300413081010.png",
+      "p_desc": "신선한 당근과 새콤달콤 오렌지를 그대로"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2026",
+      "p_name": "사과 비트 착즙 주스",
+      "price": 5500,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202103300412376730.png",
+      "p_desc": "신선한 비트와 상큼한 사과를 그대로"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2027",
+      "p_name": "피치 딸기 크러쉬",
+      "price": 5900,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202103300409470840.png",
+      "p_desc": "새콤달콤한 딸기의 시원한 한 방"
+    }
+  },
+  {
+    "model": "payment.product",
+    "fields": {
+      "p_code": "2028",
+      "p_name": "딸기 치즈케익 할리치노",
+      "price": 5900,
+      "image_path": "//admin.hollys.co.kr/upload/mall/mallProdut_202103300412035600.png",
+      "p_desc": "상큼한 딸기와 달콤한 치즈케익의 시원한 만남"
+    }
+  }
+]

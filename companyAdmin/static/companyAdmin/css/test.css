@@ -1,0 +1,29 @@
+th {
+    color : magenta;
+    width: 100px;
+    height : 50px;
+    font-size: 2em;
+}
+
+
+table {
+    margin: 50px auto;
+    border-collapse : collapse;
+}
+
+.sun {
+    color : red;
+}
+
+.sat{
+    color: blue;
+}
+
+td {
+    width: 100px;
+    height : 50px;
+    font-size : 24px;
+    border : 1px solid black;
+    border-collapse : collapse;
+    text-align : center;
+}

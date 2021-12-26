@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet" href="{% static 'user/css/register.css' %}" type="text/css">
+    <script src="{% static 'user/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'user/js/register.js' %}"></script>
+
+</head>
+<body>
+<form action="/user/register_check/" method="post">
+    {% csrf_token %}
+    <div>
+        <table>
+            <tr>
+                <td class="title">Member Register</td>
+            </tr>
+            <tr>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>아이디</td>
+                <td>
+                    <input type="text" class="id_input" name="id" id="id" placeholder="6~11자로 입력해주세요" check_result="fail" required />
+                    <button type="button" class="id_overlap_button" name="btn1" id="user_id" onclick="id_overlap_check()" >중복검사</button>
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="pwd1" id="pwd1"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="password" name="pwd2" id="pwd2" onblur="check_pwd()" >*같은 암호를 입력하세요</td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td>
+                    <input type="text" name="domain"> @ <input type="text" name="email1" id="email1">
+                    <select name="email2" id="email2" onchange="check_email(this)">
+                        <option value="blank" selected>--선택--</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.com">daum.com</option>
+                        <option value="nate.com">nate.com</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td>
+                    <select name="phone1">
+                        <option value="010" selected>010</option>
+                        <option value="011">011</option>
+                        <option value="017">017</option>
+                    </select>
+                    - <input type="text" size="3" name="phone2"> - <input type="text" size="3" name="phone3">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="submit">
+                    <input type="submit" value="확인">
+                    <input type="button" value="다시입력" onclick="location.href='../register/'">
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>

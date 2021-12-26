@@ -1,0 +1,54 @@
+        @font-face {
+            src: url("../fonts/URW chancery L.ttf");
+            font-family: "urw";
+        }
+
+        @font-face {
+            src: url("../fonts/NanumGothicBold.ttf");
+            font-family: "NanumGothicBold";
+        }
+
+        @font-face {
+            src: url("../fonts/NanumGothic.ttf");
+            font-family: "NanumGothic";
+        }
+
+
+        #message {
+            font-size: 30px;
+            font-family: "NanumGothic";
+        }
+
+
+        .approval_list {
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+            width: 40vw;
+            height: 70vh;
+            margin: auto;
+            background-color: #F6EEE0;
+            position: relative;
+        }
+
+        #approval_table {
+            background-color: #F6EEE0;
+            width: 100%;
+            height: 50%;
+            margin-bottom: 10px;
+        }
+
+        .approval_list a {
+            padding: 5px;
+            text-decoration: none;
+            color: #A45C40;
+            border: 2px solid #A45C40;
+            border-radius: 5px;
+
+        }
+
+        .approval_list a:hover {
+            color: #F6EEE0;
+            background-color: #A45C40;
+            box-shadow: 2px 2px 5px #C38370;
+        }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>findID_success</title>
+    <link rel="stylesheet" href="{% static 'user/css/success.css' %}" type="text/css">
+</head>
+<body>
+<form action="/user/login/" method="post">
+    {% csrf_token %}
+    <div>
+         <table>
+             <tr><td>{{message}}</td></tr>
+             <tr>
+                 <td><br></td>
+             </tr>
+             <tr>
+                <td><input type="button" name="btn" value="로그인하러 가기" onclick="location.href='../'"></td>
+             </tr>
+         </table>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>지점별 판매액 </title>
+    <link rel="stylesheet" href="{% static 'companyAdmin/css/fonts.css' %}" type="text/css">
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+        #logo {
+            margin: 0px;
+            padding: 20px;
+            background-color: #E4B7A0;
+            width: 100%;
+            height: 100px;
+            position: sticky;
+            top: 0px;
+        }
+
+        div ul {
+            width: 20%;
+            height: 100%;
+            background-color: #F6EEE0;
+            position: fixed; /* Make it stick, even on scroll */
+            overflow: auto; /* Enable scrolling if the sidenav has too much content */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li a {
+          display: block;
+          padding: 8px 16px;
+          text-decoration: none;
+          font-family: 'NanumGothic';
+          font-size: 30px;
+          color: #A45C40;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+          background-color: #A45C40;
+          color: white;
+        }
+
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 500px;
+            /* The height is 500 pixels */
+            width: 50%;
+            /* The width is the width of the web page */
+            clear: left;
+            position: relative;
+            left: 25%;
+            top: 50px;
+            overflow: auto;
+        }
+
+        #content {
+            border: 2px solid black;
+            height: 70%;
+            overflow: auto;
+        }
+
+        .logo-box {
+        position: absolute;
+        top:40px;
+        right: 40px;
+        }
+
+        .sin{
+        width: 120px;
+        height: 70px;
+        background-color: #fff;
+        }
+
+        .accordion {
+          background-color: #eee;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+        }
+
+    </style>
+    <script>
+        window.onload = function(){
+            var date = document.getElementById('monthDate');
+            date.value = new Date().toISOString().substring(0, 7);;
+            date.max = new Date().toISOString().substring(0, 7);;
+
+            var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i <= acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                        } else {
+                            panel.style.display = "block";
+                        }
+                    });
+                }
+        }
+    </script>
+</head>
+<body>
+<div id="logo">
+        <p>지점별 매출 내역</p>
+    </div>
+    <div class="logo-box">
+            <img alt="logo" src="../../static/companyAdmin/logo/logo.png" class="sin">
+    </div>
+    <div>
+        <ul>
+            <li><a href="#">지점 위치</a></li>
+            <li><a href="{% url 'companyAdmin:append' %}">상품 추가</a></li>
+            <li><a href="{% url 'companyAdmin:delete' %}">상품 삭제</a></li>
+            <li><a href="{% url 'companyAdmin:plist' %}">상품 조회</a></li>
+            <li><a href="{% url 'companyAdmin:sales_data' %}">판매 현황</a></li>
+            <li><a href="{% url 'companyAdmin:logout' %}">로그아웃</a></li>
+        </ul>
+    </div>
+    <div id="map">
+        <form action="{% url 'companyAdmin:loc_detail' %}" method="POST">
+            {% csrf_token %}
+            <select name="location" id="location">
+                <option value="blank" selected>--선택--</option>
+                {% for loc in loc_list %}
+                    <option value="{{ loc.c_code }}">{{ loc.c_name }}</option>
+                {% endfor %}
+            </select>
+            <input type="month" id="monthDate" name="monthDate" min="2020-01"/>
+            <button>검색</button>
+        </form>
+        <p>{{ name }}</p>
+        <p> {{ date }} 총 매출: {{ total }}</p>
+        <div id="content">
+            {% for sale in sales %}
+                <div class="saleList">
+                <button class="accordion">
+                    <span value="mark">▼</span><span>{{ sale.date }}</span>    <span>{{ sale.total }}</span>
+                </button>
+                <div class="panel" style="display: none;">
+                    <table>
+                        {% for item in sale.payitem_set.all %}
+                            <tr style="background-color: #F6EEE0;">
+                                <td>상품명</td><td>옵션</td><td>수량</td>
+                            </tr>
+                            <tr>
+                                <td>{{ item.p_code.p_name }}</td>
+                                <td>
+                                    {% if item.opt == 1 %}
+                                        <p>ice</p>
+                                    {% else %}
+                                        <p>hot</p>
+                                    {% endif %}
+                                </td>
+                                <td>{{ item.cnt }}잔</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

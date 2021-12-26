@@ -1,0 +1,60 @@
+{% extends 'payment/base.html' %}
+{% load static %}
+{% block title%}
+<title>PaymentHistory</title>
+{% endblock %}
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'payment/css/pay_history.css' %}" type="text/css">
+<script src="{% static 'payment/js/pay_history.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="history_content">
+        <div id="payment_history"><p>Payment History</p></div>
+        <div id="search_form">
+            <form action="{% url 'payment:history' %}" method="post">
+            {% csrf_token %}
+            <input type="date" id='fromDate' name="fromDate" min="2015-01-01" onchange="previousDate()"/>
+            <input type='date' id='toDate' name="toDate" onchange="currentDate()"/>
+            <input type="submit" value="search">
+        </form>
+        </div>
+        <p id="period">{{ period }}</p>
+        <div class="container">
+            {% for info in pay_infos %}
+
+                <button class="accordion">
+                    <span>No.{{ info.id }}</span>
+                    <span>   {{ info.date }}</span>
+                    <span>{{ info.c_code.c_name }} </span>
+                    <span>{{ info.total }}</span>
+                    ▼
+                </button>
+                <div class="panel" style="display: none;">
+                    <table>
+                        {% for item in info.payitem_set.all %}
+                            <tr>
+                                <td colspan="2">
+                                    <p>{{ item.p_code.p_name }}</p>
+                                </td>
+                                <td colspan="2">
+                                    {% if item.opt == 1 %}
+                                        <p>ice</p>
+                                    {% else %}
+                                        <p>hot</p>
+                                    {% endif %}
+                                </td>
+                                <td colspan="2">
+                                    {{ item.p_code.price }}
+                                </td>
+                                <td colspan="2">
+                                    <p>{{ item.cnt }}잔</p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

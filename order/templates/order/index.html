@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko-kr">
+    <head>
+        <meta charset="UTF-8">
+        {% block title %}
+        <title>홈</title>
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'order/css/index.css' %}" type="text/css">
+        {% block scripts %}
+        {% endblock %}
+        <script>
+            /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+              document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+
+            /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft = "0";
+              document.body.style.backgroundColor = "white";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="{% url 'order:index' %}">ORDER</a>
+          <a href="{% url 'order:cart' %}">CART</a>
+          <a href="{% url 'payment:history' %}">PAYMENT HISTORY</a>
+          <a href="{% url 'user:logout' %}">LOGOUT</a>
+        </div>
+        <span onclick="openNav()"><image id="menutab" src="../../static/order/image/menu.png"></image></span>
+
+        <div class="mainarea">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>

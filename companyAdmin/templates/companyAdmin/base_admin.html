@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>관리자</title>{% endblock %}
+    <link rel="stylesheet" href="{% static 'companyAdmin/css/companyAdmin.css' %}" type="text/css">
+    {% block scripts %}
+    {% endblock %}
+</head>
+<body>
+    <div id="logo">
+      {% block subtitle %}
+      {% endblock %}
+        <div class="logo-box">
+            <img src="../../static/companyAdmin/logo/logo.png" class="sin">
+        </div>
+    </div>
+    <div>
+        <ul>
+            <li><a href="{% url 'companyAdmin:maps' %}">지점 위치</a></li>
+            <li><a href="{% url 'companyAdmin:append' %}">상품 추가</a></li>
+            <li><a href="{% url 'companyAdmin:delete' %}">상품 삭제</a></li>
+            <li><a href="{% url 'companyAdmin:plist' %}">상품 조회</a></li>
+            <li><a href="{% url 'companyAdmin:sales_data' %}">판매 현황</a></li>
+            <li><a href="{% url 'companyAdmin:logout' %}">로그아웃</a></li>
+        </ul>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

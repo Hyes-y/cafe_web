@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>findID</title>
+    <link rel="stylesheet" href="{% static 'user/css/find.css' %}" type="text/css">
+</head>
+<body>
+<form action="/user/findID_check/" method="post">
+    {% csrf_token %}
+    <div>
+        <table>
+            <tr>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td class="Title">Find ID</td>
+            </tr>
+            <tr>
+                <td class="name">이름</td><td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td>
+                    <select name="phone1">
+                        <option value="010" selected>010</option>
+                        <option value="011">011</option>
+                        <option value="017">017</option>
+                    </select>
+                    - <input type="text" size="3" name="phone2"> - <input type="text" size="3" name="phone3">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="아이디 찾기" id="btn"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="message">{{message}}</td>
+            </tr>
+            <tr>
+                <td><br></td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>

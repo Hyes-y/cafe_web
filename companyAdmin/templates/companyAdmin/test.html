@@ -1,0 +1,60 @@
+{% extends 'companyAdmin/base_admin.html' %}
+{% load static %}
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'companyAdmin/css/test2.css' %}" type="text/css">
+<link rel="stylesheet" href="https://uicdn.toast.com/chart/latest/toastui-chart.min.css" />
+<script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
+{% endblock %}
+{% block subtitle %}
+<p id="subtitle">판매 현황</p>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="item">오늘의 매출액은<br> <b>{{ total_price }}</b> 원입니다.</div>
+        <div class="item">오늘의 주문량은<br> <b>{{ total_count }}</b> 건입니다.</div>
+        <div class="item">이번 달 평균 매출액은<br> <b>{{ month_avg }}</b> 원입니다.</div>
+        <div class="item">이번 달 평균 주문량은<br> <b>{{ month_count_avg }}</b> 건입니다.</div>
+        <div class="item">
+            <span>시간대별 매출 현황</span>
+            <p id="date">[ {{ current_date }} ]</p>
+            <div id="chart-column"></div>
+            <script>
+                const Chart = toastui.Chart;
+                const el = document.getElementById('chart-column');
+                const data ={{ data | safe }};
+                const options = {
+                  tooltip: {
+                        offsetX: 30,
+                        offsetY: -300,
+                      },
+                  chart: {
+                            width: 900,
+                            height: 400
+                       },
+
+                  yAxis: [
+                            {
+                              title: '매출액',
+                              chartType: 'column'
+                            },
+                            {
+                              title: '주문 건수',
+                              chartType: 'line',
+                              scale: {
+                                min: 0,
+                                max: 50
+                              },
+                            },
+                          ],
+                };
+
+                const chart = Chart.columnLineChart({ el, data, options });
+
+
+            </script>
+        </div>
+        <div class="item"><a class="button" href="{% url 'companyAdmin:location' %}">지점별 매출 내역</a></div>
+        <div class="item"><a class="button" href="{% url 'companyAdmin:month' %}">월별 매출 현황</a></div>
+
+    </div>
+{% endblock %}

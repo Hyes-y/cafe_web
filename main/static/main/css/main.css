@@ -1,0 +1,128 @@
+        @font-face {
+            src: url("../fonts/URW chancery L.ttf");
+            font-family: "urw";
+        }
+
+        @font-face {
+            src: url("../fonts/NanumGothicBold");
+            font-family: "NanumGothicBold";
+        }
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            font-family: 'NanumGothicBold';
+            margin: 0px;
+            padding: 10px;
+            background-image: url('../images/coffee1.jpg');
+            background-repeat : no-repeat;
+            background-size : 100% 100%;
+            animation: mymove 5s infinite;
+        }
+
+        @keyframes mymove {
+          50% {background-image: url('../images/coffee2.jpg');}
+        }
+
+        #myDIV {
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 90vw;
+            height: 90vh;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #content {
+            display: inline-block;
+            text-align: center;
+            width: 30vw;
+            height: 50vh;
+            margin: auto;
+            background-color: rgba(195, 131, 112, 0.8);
+            position: absolute;
+        }
+
+        #logo p {
+            display: block;
+            margin-top: 40px;
+            color: #F6EEE0;
+            font-family: 'urw';
+            font-size: 60px;
+            cursor: default;
+        }
+
+        #login p {
+            font-size: 20px;
+            color: #F6EEE0;
+        }
+        #login a {
+            font-family: 'urw';
+            font-size: 20px;
+            display: block;
+            margin: 30px auto;
+            width: 40%;
+            height: 15%;
+            text-decoration: none;
+            color: #F6EEE0;
+            border: 2px solid #F6EEE0;
+            cursor: url('../images/coffee-beans.png'), auto;
+        }
+        #login a:hover {
+            color: #C38370;
+            background-color: #F6EEE0;
+        }
+
+      /* The side navigation menu */
+        .sidenav {
+          height: 100%; /* 100% Full-height */
+          width: 0; /* 0 width - change this with JavaScript */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Stay on top */
+          top: 0; /* Stay at the top */
+          left: 0;
+          background-color: rgb(195, 131, 112);
+          overflow-x: hidden; /* Disable horizontal scroll */
+          padding-top: 60px; /* Place content 60px from the top */
+          transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+        .sidenav a {
+          cursor: url('../images/coffee-beans.png'), auto;
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #E4B7A0;
+          display: block;
+          transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+          color: #F6EEE0;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+          transition: margin-left .5s;
+          padding: 20px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}

@@ -1,0 +1,62 @@
+[
+  {
+    "model": "payment.member",
+    "fields":{
+      "m_name": "홍길동",
+      "m_id": "gildong123",
+      "m_password": "gildong123",
+      "m_number": "01012345678",
+      "mail": "gildong123@a.com",
+      "m_point": 600
+    }
+  },
+  {
+    "model": "payment.member",
+    "fields":{
+      "m_name": "김영희",
+      "m_id": "hui123",
+      "m_password": "hui123",
+      "m_number": "01012341234",
+      "mail": "hui123@a.com",
+      "m_point": 1000
+    }
+  },
+  {
+    "model": "payment.member",
+    "fields": {
+      "m_name": "박철수",
+      "m_id": "su123",
+      "m_password": "su123",
+      "m_number": "01011111111",
+      "mail": "su123@a.com",
+      "m_point": 200
+    }
+  },
+  {
+    "model": "payment.member",
+    "fields": {
+      "m_name": "최훈이",
+      "m_id": "hoon123",
+      "m_password": "hoon123",
+      "m_number": "01022222222",
+      "mail": "hoon123@a.com",
+      "m_point": 300
+    }
+  },
+  {
+    "model": "payment.company",
+    "fields": {
+      "c_name": "할리스 명동점",
+      "c_code": 1234,
+      "location": "x"
+    }
+  },
+  {
+    "model": "payment.company",
+    "fields": {
+      "c_name": "할리스 여의도점",
+      "c_code": 5678,
+      "location": "x"
+    }
+  }
+]

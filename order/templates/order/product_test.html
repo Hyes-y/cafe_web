@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap{
+            background-color: #F6EEE0;
+            width: 100%;
+            padding: 0px;
+            border: 5px solid #F6EEE0
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #wrap .product{
+            top: 50%;
+            left: 50%;
+            transform: translate(30%,0%);
+            border-radius: 5px;
+            background-color: white;
+            width: 200px;
+            height: 280px;
+            margin: 10px;
+            float: left;
+        }
+        #wrap .product:hover{
+            box-shadow: 10px 10px 10px #C38370;
+        }
+        #wrap .product a, img{
+            display: block;
+            text-align: center;
+            margin: 0px auto;
+            padding: 10px;
+            text-decoration: none;
+        }
+        #wrap .product img{
+            height: 150px;
+        }
+        #wrap .product .named, .cost{
+            display: block;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<form method="post">
+  <div id='wrap'>
+      {% for item in product %}
+        <div class="product">
+            <a href="{% url 'order:option' item.p_code %}" onfocus="blur()">
+                {% if item.image_path %}
+                    <img src="{{ item.image_path }}" width="140">
+                {% else %}
+                    <img src="{{ item.user_image_path.url }}" width="140">
+                {% endif %}
+                <br><span class="named">{{ item.p_name }}</span>
+            </a>
+            <span class="cost"> {{ item.price }}</span>
+        </div>
+      {% endfor %}
+  </div>
+</form>
+</body>
+</html>

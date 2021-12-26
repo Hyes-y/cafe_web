@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../static/order/css/option.css" rel="stylesheet" type="text/css">
+    <title>세부 옵션 선택</title>
+
+	<script src="../static/order/js/option.js"></script>
+    <script>
+                function count(type)  {
+          // 결과를 표시할 element
+          const resultElement = document.getElementById('result');
+
+          // 현재 화면에 표시된 값
+          // let number = resultElement.innerText;
+          let number = resultElement.value;
+
+          // 더하기/빼기
+          if(type === 'plus') {
+              if(parseInt(number) === 999) {
+                number = 999;
+                alert('최대 수량을 초과하셨습니다.');
+                }
+                else{
+                number = parseInt(number) + 1;
+                }
+          }else if(type === 'minus')  {
+          if(parseInt(number) === 1) {
+            alert('최소 수량입니다.');
+            number = 1;
+            }
+            else{
+            number = parseInt(number) - 1;
+            }
+          }
+
+          // 결과 출력
+          //resultElement.innerText = number;
+          resultElement.value = number;
+        }
+    </script>
+    <style>
+        body{
+            background-color:#C38370;
+        }
+
+        #result {
+            border: 1px solid black;
+            width: 30px;
+            height: 22px;
+            margin: 0px;
+            text-align: center;
+        }
+
+        #image {
+            margin: 200px 480px auto;
+            padding: 35px 50px 10px 50px;
+            position: absolute;
+            background-color: #E4B7A0;
+            width: 170px;
+            height: 400px;
+            border: 5px solid #F6EEE0;
+            border-radius : 10px;
+            text-align: center;
+        }
+
+        p {
+            font-weight: 650;
+
+        }
+
+        #option {
+            margin: 200px 780px auto;
+            padding: 35px 50px 10px 50px;
+            position: absolute;
+            background-color: #E4B7A0;
+            width: 300px;
+            height: 400px;
+            border: 5px solid #F6EEE0;
+            border-radius: 10px;
+        }
+
+
+        img{
+            display: block;
+            text-align: center;
+            margin: 10px auto;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .named, .cost, .desc{
+            display: block;
+            text-align: center;
+            padding: 0px;
+            text-decoration: none;
+            color: white;
+            font-family: 'NanumGothicBold';
+            font-size: 15px;
+
+            }
+    </style>
+</head>
+<body>
+<!--<div class="card mb-3" style="max-width: 540px;">-->
+<!--  <div class="row g-0">-->
+<!--    <div class="col-md-4">-->
+<!--      <img src="{{ product.image_path}}" class="img-fluid rounded-start" alt="...">-->
+<!--    </div>-->
+<!--    <div class="col-md-8">-->
+<!--      <div class="card-body">-->
+<!--        <h5 class="named">{{ product.p_name }}</h5>-->
+<!--        <p class="cost">{{ product.price }}</p>-->
+<!--          <p class="desc">{{ product.p_desc }}</p>-->
+<!--          <p class="option">-->
+<!--              <form class=opt action="/order/{{ product.p_code }}/cart_save/" method="POST">-->
+<!--                {% csrf_token %}-->
+<!--                <p>사이즈 선택</p>-->
+<!--                <input type="radio" name="size" value="basic" required> basic-->
+<!--                <input type="radio" name="size" value="sizeup"> sizeup-->
+<!--                <br>-->
+<!--                <p>옵션 선택</p>-->
+<!--                <input type="radio" name="ice_hot" value="1" required> ice-->
+<!--                <input type="radio" name="ice_hot" value="0"> hot-->
+<!--                <br>-->
+<!--                <p>수량 선택</p>-->
+<!--                <input type='button' onclick='count("minus")' value='-'/>-->
+<!--                <input type='text' id='result' name="cnt" value="1"/>-->
+<!--                <input type='button' onclick='count("plus")' value='+'/>-->
+<!--                <br>-->
+<!--                <p>테이크아웃 / 매장</p>-->
+<!--                <input type="radio" name="here_togo" value="here" required> here-->
+<!--                <input type='radio' name="here_togo" value="togo"> togo<br>-->
+
+<!--                <button type="submit" name="cart-submit" value="cart">주문 담기</button>-->
+<!--                <input type="button" value="BACK" onclick='history.back()'>-->
+<!--                <input type="button" value="Reset" onclick='location.reload()'>-->
+<!--            </form>-->
+<!--          </p>-->
+<!--          -->
+<!--        <p class="card-text"><small class="text-muted">Last updated 09.01</small></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+    <div id="container">
+        <div id='image'>
+            {% if product.image_path %}
+                <img src="{{ product.image_path}}" width="140" alt="{{ product.p_name }}">
+            {% else %}
+                <img src="{{ product.user_image_path.url }}" width="140" alt="{{ product.p_name }}">
+            {% endif %}
+            <br><span class="named">{{ product.p_name }}</span><br>
+            <span class="cost"> {{ product.price }}</span><br>
+            <span class="desc">{{ product.p_desc }}</span> <!--추가한 부분-->
+        </div>
+        <div id="option">
+            <form class=opt action="/order/{{ product.p_code }}/cart_save/" method="POST">
+                {% csrf_token %}
+                <p>사이즈 선택</p>
+                <input type="radio" name="size" value="basic" required> basic
+                <input type="radio" name="size" value="sizeup"> sizeup
+                <br>
+                <p>옵션 선택</p>
+                <input type="radio" name="ice_hot" value="1" required> ice
+                <input type="radio" name="ice_hot" value="0"> hot
+                <br>
+                <p>수량 선택</p>
+                <input type='button' onclick='count("minus")' value='-'/>
+                <input type='text' id='result' name="cnt" value="1"/>
+                <input type='button' onclick='count("plus")' value='+'/>
+                <br>
+                <p>테이크아웃 / 매장</p>
+                <input type="radio" name="here_togo" value="here" required> here
+                <input type='radio' name="here_togo" value="togo"> togo<br>
+                <br>
+
+                <button type="submit" name="cart-submit" value="cart">주문 담기</button>
+                <input type="button" value="BACK" onclick='history.back()'>
+                <input type="button" value="Reset" onclick='location.reload()'>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

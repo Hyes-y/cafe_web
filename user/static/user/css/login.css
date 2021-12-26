@@ -1,0 +1,48 @@
+    @font-face {
+        src: url("../fonts/NanumGothicBold");
+        font-family: "NanumGothicBold";
+    }
+
+
+
+    div{
+        background-color: rgba(255,255,255,0.5);
+        margin: 3%;
+        padding: 8%;
+    }
+
+    table{
+        background: white;
+        margin: auto;
+        padding: 150px 100px;
+        font-size:15px;
+        color: gray;
+        font-weight: bold;
+        font-family: "NanumGothicBold";
+    }
+
+    .Title{
+        font-size: 20px;
+        color: #C38370;
+        font-family: "NanumGothicBold";
+    }
+
+    input[type=text], input[type=password]{
+        width: 200px;
+        height: 20px;
+        padding: 5px 5px 5px 10px;
+        font-family: "NanumGothicBold";
+    }
+
+    input[type=button]{
+        background-color: white;
+        border: none;
+        color: gray;
+        font-family: "NanumGothicBold";
+    }
+
+    input[type=submit]{
+        width: 100%;
+        padding: 25px 10px;
+        font-family: "NanumGothicBold";
+    }

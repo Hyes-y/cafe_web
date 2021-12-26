@@ -1,0 +1,18 @@
+    a{
+        color: gray;
+        margin: auto;
+    }
+
+    table{
+        margin: 120px auto;
+        padding: 10%;
+        font-size:15px;
+        color: #C38370;
+        font-weight: bold;
+    }
+
+
+    .logo{
+        margin: 0px 25%;
+        margin-bottom: -25%;
+    }
